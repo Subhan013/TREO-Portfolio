@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    color: white;
+    height: 100vh;
+    width: 100%;
+  }
+
+  /* Navbar container */
+  nav {
+    display: flex;
+    justify-content: space-between; /* logo left, links right */
+    padding: 20px 40px;
+  }
+
+  /* Logo */
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: black;
+    text-transform: uppercase;
+  }
+
+  /* Nav links */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 5px 0;
+    text-align: end;
+  }
+
+  /* Hover underline effect */
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: black;
+    transform: scaleX(0);
+    transform-origin: right; /* start from right */
+    transition: transform 0.4s cubic-bezier(0.65, -0.25, 0.25, 1.25);
+  }
+
+  .nav-links a:hover::after {
+    transform: scaleY(1);
+  }
