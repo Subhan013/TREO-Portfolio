@@ -18,9 +18,12 @@ html, body {
 
   /* Navbar container */
   nav {
+    position: fixed;
     display: flex;
     justify-content: space-between; /* logo left, links right */
     padding: 20px 40px;
+    z-index: 10;
+    width: 100%; /* Add this line */
   }
 
   /* Logo */
@@ -35,7 +38,7 @@ html, body {
   /* Nav links */
   .nav-links {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Change to row */
   }
 
   .nav-links a {
@@ -64,3 +67,53 @@ html, body {
   .nav-links a:hover::after {
     transform: scaleY(1);
   }
+
+  .hero1 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1200px; /* Camera perspective */
+  }
+  
+  .hero-title {
+    position: absolute;
+    z-index: 20;
+    font-size: 8rem;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+  }
+  
+  .dish {
+    position: relative;
+    width: 120%;
+    height: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out;
+  }
+  
+  .photo {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  
+  /* scatter images around */
+  .photo:nth-child(1) { top: 20%; left: 12%; }
+  .photo:nth-child(2) { top: 12%; right: 20%; }
+  .photo:nth-child(3) { bottom: 12%; left: 15%; }
+  /* .photo:nth-child(4) { top: 50%; right: 50%; transform: translate(50%, 50%); } */
+  .photo:nth-child(5) { top: 55%; left: 62%; }
+  
